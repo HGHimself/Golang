@@ -12,19 +12,18 @@ type MyStruct struct {
 func main() {
 	fmt.Println("Hello, World!")
 
-  h1 := "GET / HTTP/1.1\r\n"
-  h2 := "cache-control: no-cache\r\n"
-  h3 := "Postman-Token: b86db5e0-316f-4b76-8e14-6309004dd961\r\n"
-  h4 := "User-Agent: PostmanRuntime/7.4.0\r\n"
-  h5 := "Accept: */*\r\n"
-  h6 := "Host: www.hgking.xyz:8080\r\n"
-  h7 := "accept-encoding: gzip, deflate\r\n"
-  h8 := "Connection: keep-alive\r\n"
-  h9 := "content-length: 129"
-
+  // h1 := "GET / HTTP/1.1\r\n"
+  // h2 := "cache-control: no-cache\r\n"
+  // h3 := "Postman-Token: b86db5e0-316f-4b76-8e14-6309004dd961\r\n"
+  // h4 := "User-Agent: PostmanRuntime/7.4.0\r\n"
+  // h5 := "Accept: */*\r\n"
+  // h6 := "Host: www.hgking.xyz:8080\r\n"
+  // h7 := "accept-encoding: gzip, deflate\r\n"
+  // h8 := "Connection: keep-alive\r\n"
+  // h9 := "content-length: 129"
+/*
   header_string := join(h1, h2, h3, h4, h5, h6, h7, h8, h9)
   header_bytes := string_to_bytes(header_string)
-
   // these two together will be used to define each header
   //
   // header_index: position in the byte array where the header starts
@@ -68,6 +67,19 @@ func main() {
   }
 
   fmt.Println("Done!")
+  */
+
+
+  buf := make([]byte, 0)
+
+  tmp := make([]byte, 32)
+
+  for i := 0; i < 32; i++ {
+    tmp[i] = byte(i)
+  }
+
+  buf = append(buf, tmp[:32]...)
+  fmt.Println(buf)
 }
 
 // headers_index: position in the byte array where the header starts
